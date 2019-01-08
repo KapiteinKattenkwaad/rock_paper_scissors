@@ -8,14 +8,31 @@
 </head>
 <body>
     
+ <p id="computerOutput">
 
+ </p>
 
 
     <script>
     
         function computerPlay() {
-            let randomComputerChoice = Math.random() * 3;
-            console.log(randomComputerChoice);
+            let randomNumber = Math.floor((Math.random() * 3) + 1);
+            let computerChoice = "";
+
+            let computerOutput = document.getElementById("computerOutput");
+
+            if (randomNumber === 1) {
+                computerOutput.innerHTML = "Rock";
+                console.log(computerChoice);
+            } else if (randomNumber === 2) {
+                computerOutput.innerHTML = "Paper";
+                console.log(computerChoice);
+            } else if (randomNumber === 3) {
+                computerOutput.innerHTML =  "Scissors";
+                console.log(computerChoice);
+            }
+            
+           
         }
 
     </script>
