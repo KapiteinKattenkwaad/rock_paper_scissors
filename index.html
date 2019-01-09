@@ -9,27 +9,18 @@
 <body>
 
 
- <p id="computerOutput">
-
- </p>
+ <p id="computerOutput"> </p>
 
  Computer points: 
- <p id="computerPoints">
-    
- </p>
+ <p id="computerPoints"> </p>
 
- <p id="playerOutput">
-    
- </p>
+ <p id="playerOutput"> </p>
 
  <p>Player points:</p>
- <p id="playerPoints">
+ <p id="playerPoints"> </p>
+ 
 
- </p>
-
- <p id="output" onClick="playRound()" onClick="counter++">
-
- </p>
+ <p id="output" onClick="playRound()" onClick="counter++"></p>
 
  <button id="playGame">Play Game</button>
 
@@ -82,15 +73,10 @@
         document.getElementById("playGame").addEventListener("click", playRound);
 
 
-        
-
-
         var counter = 0;
         var computerPoints = 0;
         var playerPoints = 0;
        
-
-        
 
         function playRound() {
 
@@ -141,44 +127,28 @@
             if (counter === 5) {
 
               
-                    if (computerPoints === playerPoints){
+                if (computerPoints === playerPoints){
                         alert(`It is a tie. You both have ${computerPoints} points. `);
                     }
-                     else if (computerPoints > playerPoints) {
-                        alert(`You lost. The computer beat you with ${computerPoints}. `);
-            }         else if (playerPoints > computerPoints) {
+                else if (computerPoints > playerPoints) {
+                        alert(`You lost. The computer beat you with ${computerPoints} points. `);
+            }    else if (playerPoints > computerPoints) {
                         alert(`You won! You overpowered the computer with ${playerPoints} points. `)
             }
+            //reset everything, also the content of the html
             counter = 0;
             computerPoints = 0;
             playerPoints = 0;
+            document.getElementById("computerPoints").innerHTML = 0;
+            document.getElementById("playerPoints").innerHTML = 0;
+            document.getElementById("computerOutput").innerHTML = "";
+            document.getElementById("playerOutput").innerHTML = "";
+            document.getElementById("output").innerHTML = "";
+
                 }
+                console.log(counter);
             }
             
-        
-    
-/*
-
-            function countingPoints() {
-            
-                if (computerPoints === playerPoints)
-                alert(`It is a tie. You both have ${computerPoints} points. `)
-            } else if (computerPoints > playerPoints) {
-                alert(`You lost. The computer beat you with ${computerPoints}. `)
-            } else if (playerPoints > computerPoints) {
-                alert(`You won! You overpowered the computer with ${playerPoints} points. `)
-            }
-            counter = 0;
-            computerPoints = 0;
-            playerPoints = 0;
-            }
-
-
-        countingPoints();
-
-*/
-
-
     </script>
 </body>
 </html>
